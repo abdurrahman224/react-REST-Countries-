@@ -1,17 +1,22 @@
-.box {
-  border: 2px solid pink;
-  margin: 15px;
-  padding: 15px;
-  border-radius: 15px;
+.conutries-container{
+ display: grid;
+ grid-template-columns: repeat(3,1fr);
+ gap: 12px;
+ padding: 10px;
 }
-.visited{
+.conutries-container img{
+width: 85%;
+height: 200px;
+border-radius: 15px;
 
-
-    background-color: beige;
+transition: transform 0.3s ease ;
 }
-.nvisited{
-
-
-    background-color: black;
-    color: white;
+.conutries-container img:hover{
 }
+.countyName{
+
+text-align: left;
+padding: -20px;
+
+}
+ 

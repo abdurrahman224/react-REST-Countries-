@@ -1,10 +1,64 @@
-.conutries-container{
 
+
+
+
+
+
+
+.box {
+    border: 4px solid rgb(13, 158, 13);
+    margin:15px ;
+padding: 15px;
+border-radius:15px ;
+background-color: #ffff;
+transition:transform 0.3s ease ,box-shadow 0.3s ease;
+    
+}
+.box:hover{
+
+
+    transform: scale(1.01);
+    box-shadow: 0 4px 6px;
+}
+.visited {
+
+color: #ffff;
+background-color: rgb(157, 76, 238);
+border: 1px solid green;
+box-shadow: 0 4px 50px;
+
+
+}
+.nvisited {
+
+color: #ffff;
+background-color: rgb(231, 118, 140);
+border: 1px solid green;
+
+}
+
+.box img{
+width: 100%;
+object-fit: cover;
+border-radius: 15px;
+}
+.button{
+
+display: block;
+align-items: center;
+
+}
+.flags-container{
 display: grid;
-grid-template-columns: repeat(3,1fr);
-gap: 10px;
+grid-template-columns: repeat(4,1fr);
+gap:2rem;
+    width: 200px;
+    height: auto;
+}
+.flags-container img{
 
 
 
-
+   
+    object-fit: cover;
 }
