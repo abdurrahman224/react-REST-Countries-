@@ -1,38 +1,32 @@
-import React, { useState } from 'react';
-import './country.css'
-const Country = ({country , handleVisitedCountries}) => {
-// console.log(country);
+// import React, { useState } from "react";
+import { useState } from "react";
+import "./country.css";
+const Country = ({ component, handleVisitedCountries ,handleVisitedCountriesflags }) => {
+  const { name, flags, population, area } = component;
+  const [visited, setVisited] = useState(false);
 
-const {name , flags, population,area ,cca3} = country
-const [visited , setVisited] = useState (false)
+  // console.log(component);
+  const handleVisited = () => {
+    setVisited(!visited);
+  };
 
-const  handleVisited =()=>{
+  return (
+    <div className={` box ${visited ?"visited" : "nvisited"}`}>
+      <h3 className="countyName"> {name.common}</h3>
+      <img src={flags.png} alt={flags.alt} />
+      <p>Population : {population}</p>
+      <p>area : {area}</p>
+{/* <button onClick={()=>handleVisitedCountries(component)}></button>
+      <button onClick={handleVisited }>{visited ? "Visited" : "go "} </button> */}
 
-setVisited(!visited)
-
-
-}
-// console.log(countryc);
 
 
 
-    return (
-        <div className={`box ${visited ?'visited': 'nvisited'}`}>
-            <h2 style={{color: visited ? "greenyellow" :"cadetblue"}}>{name.common}</h2>
-            <img src={flags.png} alt={flags.alt} />
-            <p>Population : {population}</p>
-            <p>Area : {area}</p>
-            <p>Code : {cca3}</p>
-            <button onClick={()=>handleVisitedCountries(country)}> Visited Count </button>
-            <button onClick={handleVisited}> {visited ? "Visited" : "Going"}</button>
-            <br/>
-            {
-
-                visited ?"I have Visited This  a Conut": "not Visited on This a Conuty"
-            }
-
-        </div>
-    );
+      <button className="button" onClick={()=>{handleVisited();handleVisitedCountries(component);handleVisitedCountriesflags(component.flags.png)} }>{visited ? "Visited" : "go "} </button>
+<br/>
+      {(visited && "  I visited on county ") || " Not Visited Countries "}
+    </div>
+  );
 };
 
 export default Country;
